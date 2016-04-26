@@ -19,4 +19,3 @@ echo -n "$TASK_SCHEDULE" | cat - /tmp/crontab >> /etc/cron.d/my-cron-job  \n\
 cron && tail -f /var/log/cron.log                                         \n\
 ' > /tmp/setupCron.sh
 RUN chmod +x /tmp/setupCron.sh
-CMD ["/tmp/setupCron.sh"]
