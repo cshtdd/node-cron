@@ -2,11 +2,28 @@
 Docker image that runs node scheduled tasks
 
 ## Usage  
-Pending...
+Create your own `Dockerfile` with the following contents.
 
-## Building the image  
+```
+FROM camilin87/node-cron:latest
+
+COPY . /usr/src/app
+```
+Make sure to have a `package.json` with a `start` script in it.
+
+When executing your own image pass the `TASK_SCHEDULE` environment variable in the following fashion:
+
+```
+docker run --env-file=.env -e TASK_SCHEDULE='* * * * *' -it <YOUR_IMAGE_NAME>
+```
+
+
+## Development  
+
+Building the image
 
 ```
 docker build --no-cache=true -t camilin87/node-cron .
 ```
+
 [Tag and Push](https://docs.docker.com/mac/step_six/)
