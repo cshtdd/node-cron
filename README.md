@@ -8,8 +8,6 @@ Create your own `Dockerfile` with the following contents.
 FROM camilin87/node-cron:latest
 
 COPY . /usr/src/app
-
-CMD ["/tmp/setupCron.sh"]
 ```
 
 Make sure to have a `package.json` with a `start` script in it.
