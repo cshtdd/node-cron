@@ -1,0 +1,2 @@
+ root cd /usr/src/app && npm start >> /var/log/cron.log 2>&1
+# An empty line is required
