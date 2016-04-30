@@ -1,4 +1,4 @@
-FROM node:5
+FROM node:latest
 RUN apt-get update && apt-get install -y cron
 
 RUN mkdir -p /usr/src/app
