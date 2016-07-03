@@ -10,7 +10,7 @@ RUN chmod 0644 /etc/cron.d/my-cron-job
 RUN touch /var/log/cron.log
 
 
-COPY ./templates/setupCron.sh > /tmp/setupCron.sh
+COPY ./templates/setupCron.sh /tmp/setupCron.sh
 RUN chmod +x /tmp/setupCron.sh
 
 CMD ["/tmp/setupCron.sh"]
