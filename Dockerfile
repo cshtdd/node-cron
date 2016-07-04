@@ -1,5 +1,5 @@
 FROM node:latest
-RUN apt-get update && apt-get install -y cron
+RUN apt-get update && apt-get install -y cron logrotate
 
 RUN mkdir -p /usr/src/app
 
