@@ -3,6 +3,14 @@ echo "Starting node-cron"
 
 cp /etc/cron.daily/logrotate /etc/cron.hourly/logrotate
 
+
+if [ -z "$TASK_SCHEDULE" ]; then
+    TASK_SCHEDULE='* * * * *'
+fi
+
+echo "TASK_SCHEDULE => $TASK_SCHEDULE"
+
+
 env                                           >> /tmp/.env
 cat /tmp/.env                                 >> /etc/cron.d/my-cron-job
 echo -n "$TASK_SCHEDULE" | cat - /tmp/crontab >> /etc/cron.d/my-cron-job
