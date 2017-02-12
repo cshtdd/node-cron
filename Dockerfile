@@ -1,5 +1,8 @@
-FROM node:latest
-RUN apt-get update && apt-get install -y cron logrotate
+FROM ubuntu
+
+RUN apt-get update && apt-get install -y cron logrotate curl
+RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
+RUN apt-get install -y nodejs
 
 RUN mkdir -p /usr/src/app
 
